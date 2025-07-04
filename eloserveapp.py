@@ -5,7 +5,7 @@ import unicodedata
 import re
 from sklearn.ensemble import RandomForestClassifier
 
-# === CONFIG ===
+
 BASE_ELO = 1500
 K = 32
 EXCEL_FILE = 'Write Your xlsx Path'
