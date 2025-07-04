@@ -8,7 +8,7 @@ from sklearn.ensemble import RandomForestClassifier
 # === CONFIG ===
 BASE_ELO = 1500
 K = 32
-EXCEL_FILE = '/Users/eugene/Downloads/The Elo Serve Collection/Elo Serve Tennis/V1 /Publicized Version Without All Analytics/ATP20-25AllData.xlsx'
+EXCEL_FILE = 'Input Your .xlsx File Path Here'
 
 # === CLEANING ===
 def clean_name(name):
