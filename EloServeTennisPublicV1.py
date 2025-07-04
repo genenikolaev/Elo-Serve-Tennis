@@ -13,14 +13,13 @@ from sklearn.ensemble import RandomForestClassifier
 BASE_ELO = 1500
 K = 32
 
-# ...existing code...
-excel_file = '/Users/eugene/Downloads/The Elo Serve Collection/Elo Serve Tennis/V1 /Publicized Version Without All Analytics/ATP20-25AllData.xlsx'
-# ...existing code... # - Rename to your source database. Must be excel file
 
-# Load all sheets from the Excel file into a dictionary
+excel_file = 'Input your file path for xlsx here.'
+
+
 xls = pd.read_excel(excel_file, sheet_name=None)
 
-# Cleans name formatting for model accsess.
+
 def clean_name(name):
     if pd.isna(name):
         return None
@@ -30,7 +29,7 @@ def clean_name(name):
     name = name.strip()
     return name
 
-# Extract all unique player names from all sheets
+
 all_players_set = set()
 for sheet_name, df in xls.items():
     df.columns = df.columns.str.strip().str.lower()
@@ -119,7 +118,7 @@ def calc_ev(model_prob, bookmaker_odds):
     ev = (model_prob * payout) - (1 - model_prob)
     return ev
 
-# Adjust following 3 values according to name formatted in dataset PDF.
+
 player_1 = "Ofner S."
 player_2 = "Shelton B."  
 bookmaker_odds = 3.4
